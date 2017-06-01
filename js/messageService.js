@@ -1,4 +1,30 @@
 angular.module('chatroom').service('messageService', function($http){
+
+this.getMessages = function(message){
+  return $http.get("https://practiceapi.devmountain.com/api/chats")
+};
+
+
+this.postMessage = function(message){
+  return $http({
+    method: "post",
+    url: "https://practiceapi.devmountain.com/api/chats",
+    data: {
+      message: message
+    }
+})};
+
+});
+ 
+
+
+
+
+
+
+
+
+
   //Here you'll need to create two methods. One called postMessage and the other called getMessages.
 
   //On the lines below create a getMessages method. This method will retrieve data from the backend.
@@ -16,4 +42,5 @@ angular.module('chatroom').service('messageService', function($http){
 
 
 
-});
+
+
